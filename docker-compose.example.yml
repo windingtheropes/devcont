@@ -1,0 +1,18 @@
+services:
+  debian:
+    image: dev_cont
+    tty: true
+    networks:
+      net1:
+        ipv4_address: {IPV4 ADD}
+        ipv6_address: {IPV6 ADD}
+    environment:
+      PUBLICKEY: {SSH PUBKEY}
+
+# Using an existing macvlan network
+networks:
+  net1:
+    name: mvlan
+    external: true
+volumes:
+   deb1:
